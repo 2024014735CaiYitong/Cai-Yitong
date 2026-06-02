@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔡仪彤个人主页</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23FFA500'/></svg>" type="image/svg+xml">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background-color: #FFFBD9;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 背景圆点容器 */
+        .dots-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* 浮动圆点 */
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            50% {
+                transform: translateY(-10px) translateX(-10px);
+            }
+            75% {
+                transform: translateY(-30px) translateX(5px);
+            }
+        }
+
+        /* 主卡片 */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 50px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            z-index: 1;
+            position: relative;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .info-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            font-size: 16px;
+            color: #999;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .content {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .content a {
+            color: #4ECDC4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .content a:hover {
+            color: #3BA99F;
+            text-decoration: underline;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .card {
+                padding: 40px 30px;
+            }
+
+            .content {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 25px;
+            }
+
+            .content {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景圆点 -->
+    <div class="dots-container" id="dotsContainer"></div>
+
+    <!-- 主卡片 -->
+    <div class="card">
+        <div class="info-section">
+            <div class="label">蔡仪彤</div>
+            <div class="content">
+                艺术与科技在读，专注动态视觉与交互创作，擅长平面设计、简易硬件编程。
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="label">爱好</div>
+            <div class="content">
+                摄影与艺术鉴赏。
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="label">联络</div>
+            <div class="content">
+                <a href="mailto:xxx_design@outlook.com">xxx_design@outlook.com</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 生成随机彩色圆点
+        function createDots() {
+            const container = document.getElementById('dotsContainer');
+            const colors = ['#FF1744', '#00E5FF', '#FFD600', '#00E676', '#FF9100', '#D500F9', '#FF4081', '#00B0FF'];
+            const dotCount = 50; // 圆点数量
+
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+
+                // 随机大小 (8-30px)
+                const size = Math.random() * 22 + 8;
+                dot.style.width = size + 'px';
+                dot.style.height = size + 'px';
+
+                // 随机位置
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.top = Math.random() * 100 + '%';
+
+                // 随机颜色
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                dot.style.backgroundColor = color;
+
+                // 随机动画时长和延迟 (5-10秒)
+                const duration = Math.random() * 5 + 5;
+                const delay = Math.random() * 3;
+                dot.style.animationDuration = duration + 's';
+                dot.style.animationDelay = delay + 's';
+
+                container.appendChild(dot);
+            }
+        }
+
+        // 页面加载时创建圆点
+        window.addEventListener('load', createDots);
+    </script>
+</body>
+</html>
