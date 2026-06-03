@@ -78,8 +78,17 @@ body {
     font-weight: 500;
 }
 
+/* 新增名字彩色放大样式 */
+.name-color {
+    font-size: 34px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff4757, #ffa502, #2ed573, #1e90ff, #a55eea);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 .content {
-    font-size: 18px;
+    font-size: 14px; /*简介缩小*/
     color: #333;
     line-height: 1.8;
     flex: 1;
