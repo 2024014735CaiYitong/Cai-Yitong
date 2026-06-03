@@ -89,7 +89,7 @@ body {
 }
 
 .content {
-    font-size: 14px; /*简介缩小*/
+    font-size: 16px;
     color: #333;
     line-height: 1.8;
     flex: 1;
