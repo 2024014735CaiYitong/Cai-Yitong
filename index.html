@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔡仪彤个人主页</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23FFA500'/></svg>" type="image/svg+xml">
+</head>
+<body>
+    <!-- 背景圆点 -->
+    <div class="dots-container" id="dotsContainer"></div>
+
+    <!-- 主卡片 -->
+    <div class="card">
+        <!-- 板块1 基本信息 -->
+        <div class="info-section">
+            <div class="label">蔡仪彤</div>
+            <div class="content">
+                艺术与科技在读，专注动态视觉与交互创作，擅长平面设计、简易硬件编程。
+            </div>
+            <!-- 个人头像位置 -->
+            <div class="avatar-box">
+                <img src="https://picsum.photos/id/65/150/150" alt="个人头像" class="avatar-img">
+            </div>
+        </div>
+
+        <!-- 板块2 项目作品 -->
+        <div class="card-wrap">
+            <div class="section-title">项目实践｜Work Projects</div>
+            <div class="content-text">
+                <!-- 项目预览图片区 -->
+                <div class="project-img-group">
+                    <img src="https://picsum.photos/id/28/220/150" alt="硬件装置作品" class="pro-img">
+                    <img src="https://picsum.photos/id/62/220/150" alt="国风平面作品" class="pro-img">
+                    <img src="https://picsum.photos/id/96/220/150" alt="动态视觉作品" class="pro-img">
+                </div>
+
+                <div class="item-box">
+                    <div class="item-icon">💡</div>
+                    <div class="item-text">
+                        <strong>交互硬件装置</strong><br>基于Arduino开发光影交互装置，实现硬件联动动态灯光视觉
+                    </div>
+                </div>
+                <div class="item-box">
+                    <div class="item-icon">🎨</div>
+                    <div class="item-text">
+                        <strong>视觉平面创作</strong><br>国风纹样设计、动态海报、品牌版式视觉等平面类原创设计
+                    </div>
+                </div>
+                <div class="item-box">
+                    <div class="item-icon">🎬</div>
+                    <div class="item-text">
+                        <strong>数字动态视觉</strong><br>AE动态插画、短视频视觉包装、个人定制静态网页开发
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 板块3 专业技能 -->
+        <div class="card-wrap">
+            <div class="section-title">专业技能｜Skills</div>
+            <div class="content-text">
+                <div class="item-box">
+                    <div class="item-icon">🖼️</div>
+                    <div class="item-text"><strong>视觉设计类</strong><br>PS/AI/AE动态制作、版式排版、传统纹样设计、新媒体视觉</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-icon">⚙️</div>
+                    <div class="item-text"><strong>硬件编程类</strong><br>Arduino单片机、基础电路搭建、实物交互作品调试</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-icon">💻</div>
+                    <div class="item-text"><strong>前端开发</strong><br>静态网页制作、页面动效、页面自适应布局编写</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 板块4 日常爱好 -->
+        <div class="card-wrap">
+            <div class="section-title">日常热爱｜Hobbies</div>
+            <div class="content-text">
+                <!-- 爱好配图 -->
+                <div class="hobby-img-box">
+                    <img src="https://picsum.photos/id/36/180/120" alt="摄影" class="hobby-img">
+                </div>
+                <div class="item-box">
+                    <div class="item-icon">📷</div>
+                    <div class="item-text"><strong>摄影创作</strong><br>纪实人像、风光拍摄，钻研数码与胶片摄影、构图光影学习</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-icon">🏺</div>
+                    <div class="item-text"><strong>艺术研学</strong><br>文博古迹鉴赏、中外美术赏析、传统非遗纹样考据、舞剧观赏</div>
+                </div>
+                <div class="item-box">
+                    <div class="item-icon">📖</div>
+                    <div class="item-text"><strong>课余提升</strong><br>多国语言自学、设计类书籍与艺术文献阅览</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 板块5 学习履历 -->
+        <div class="card-wrap">
+            <div class="section-title">学习履历｜About Study</div>
+            <div class="content-text">
+                艺术与科技专业在读，研究方向为传统国风文化+数字交互跨界创作，在校持续落地小型交互实物项目与原创视觉作品，不断拓展设计与硬件结合的创作边界。
+            </div>
+        </div>
+
+        <!-- 板块6 底部联络 -->
+        <div class="card-wrap">
+            <div class="section-title">联络我｜Contact Me</div>
+            <div class="content-text">
+                合作约稿、设计定制、项目交流均可邮件联系<br>
+                邮箱：<a href="mailto:xxx_design@outlook.com">xxx_design@outlook.com</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 生成随机彩色圆点
+        function createDots() {
+            const container = document.getElementById('dotsContainer');
+            const colors = ['#FF1744', '#00E5FF', '#FFD600', '#00E676', '#FF9100', '#D500F9', '#FF4081', '#00B0FF'];
+            const dotCount = 47; // 圆点数量
+
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+
+                // 随机大小 (8-30px)
+                const size = Math.random() * 22 + 8;
+                dot.style.width = size + 'px';
+                dot.style.height = size + 'px';
+
+                // 随机位置
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.top = Math.random() * 100 + '%';
+
+                // 随机颜色
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                dot.style.backgroundColor = color;
+
+                // 随机动画时长和延迟 (5-10秒)
+                const duration = Math.random() * 5 + 5;
+                const delay = Math.random() * 3;
+                dot.style.animationDuration = duration + 's';
+                dot.style.animationDelay = delay + 's';
+
+                container.appendChild(dot);
+            }
+        }
+
+        // 页面加载时创建圆点
+        window.addEventListener('load', createDots);
+    </script>
+</body>
+</html>
